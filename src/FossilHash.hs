@@ -14,6 +14,9 @@
 -- in panic messages, @--version@ output, or diagnostic info for more
 -- informative bug reports.
 --
+-- The datatypes and function names are kept compatible with GitHash for easy
+-- switch.
+--
 -- > {-# LANGUAGE TemplateHaskell #-}
 -- > import FossilHash
 -- >
@@ -30,10 +33,10 @@
 -- >
 -- > main = panic "oh no!"
 --
--- > % stack runghc Example.hs
--- > Example.hs: [panic master@2ae047ba5e4a6f0f3e705a43615363ac006099c1 (Mon Jan 11 11:50:59 2016 -0800) (14 commits in HEAD) (uncommitted files present)] oh no!
---
--- WARNING: None of this will work in a fossil repository without any commits. (TBD)
+-- > % fossil new fossil.db
+-- > % fossil open -k fossil.db
+-- > % cabal v2-run exe:example
+-- > example: [panic trunk@0151ca1f50a771ddf025dcd8af8db363e017f911 (2025-10-29 22:02:59 UTC) (1 commits in HEAD) (uncommitted files present)] oh no!
 --
 -- @since 0.1.0.0
 module FossilHash
@@ -61,18 +64,13 @@ module FossilHash
   ) where
 
 import Control.Exception
-import qualified Data.ByteString as B
-import qualified Data.ByteString.Char8 as B8
 import Data.Maybe (fromMaybe)
 import Data.Typeable (Typeable)
-import Data.Word (Word8)
 import Language.Haskell.TH
 import Language.Haskell.TH.Syntax
 import Language.Haskell.TH.Syntax.Compat
-import System.Directory
 import System.Exit
 import System.FilePath
-import System.IO.Error (isDoesNotExistError)
 import System.Process
 import Text.Read (readMaybe)
 

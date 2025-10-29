@@ -24,6 +24,13 @@ dependencies:
 library:
   source-dirs: src
 
+executables:
+  example:
+    source-dirs: example
+    main: Main.hs
+    dependencies:
+    - fossilhash
+
 tests:
   fossilhash-spec:
     source-dirs: test
