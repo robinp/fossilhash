@@ -12,3 +12,4 @@ cabal.config
 *.cabal
 .stack-work/
 *~
+stack.yaml.lock

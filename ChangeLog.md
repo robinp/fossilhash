@@ -1,4 +1,8 @@
-# ChangeLog for githash
+# ChangeLog for fossilhash.
+
+## 0.1.7.1
+
+* Fork from githash into fossilhash.
 
 ## 0.1.7.0
 

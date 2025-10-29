@@ -1,12 +1,12 @@
-name:        githash
-version:     0.1.7.0
-synopsis:    Compile git revision info into Haskell projects
-description: Please see the README and documentation at <https://www.stackage.org/package/githash>
+name:        fossilhash
+version:     0.1.7.1
+synopsis:    Compile fossil revision info into Haskell projects
+description: Please see the README.
 category:    Development
-author:      Michael Snoyman, Adam C. Foltzer
-maintainer:  michael@snoyman.com
+author:      Robin Palotai, Michael Snoyman, Adam C. Foltzer
+maintainer:  palotai.robin@gmail.com
 license:     BSD3
-github:      snoyberg/githash
+github:      robinp/fossilhash
 
 extra-source-files:
 - README.md
@@ -25,11 +25,11 @@ library:
   source-dirs: src
 
 tests:
-  githash-spec:
+  fossilhash-spec:
     source-dirs: test
     main:        Spec.hs
     dependencies:
-    - githash
+    - fossilhash
     - hspec
     - temporary
     - unliftio

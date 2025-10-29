@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 module Main where
 import Prelude (String, concat, error, otherwise, show)
-import GitHash
+import FossilHash
 
 panic :: String -> a
 panic msg = error panicMsg
